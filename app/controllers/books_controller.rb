@@ -14,7 +14,7 @@ class BooksController < ApplicationController
   def create
     book = Book.new(book_params)
     book.save
-    redirect_to '/top'
+    redirect_to '/books'
   end
 
   def edit
@@ -22,7 +22,7 @@ class BooksController < ApplicationController
   
   private
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.permit(:title, :body)
   end
   
 end

@@ -6,9 +6,12 @@
 <body>
     <h1>Books</h1>
     <div class=table>
-        <h3 class=calamtitle>Title</h3>
-        <h3 class=calambody>Body</h3>
+        <% @books.each do |book| %>
         
+        <h3 class="title"><%= link_to book.title, book_path(book) %></h3>
+        <h3 class="body"><%= link_to book.body %></h3>
+        
+        <% end %>
         
     </div>
     <h2>New book</h2>
