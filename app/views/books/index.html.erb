@@ -5,15 +5,23 @@
 </head>
 <body>
     <h1>Books</h1>
-    <div class=table>
-        <% @books.each do |book| %>
+    <table>
+        <thead>
+        <tr>
+        <th>Title</th>
+        <th>Body</th>
+        </tr>
+        </thead>
         
-        <h3 class="title"><%= link_to book.title, book_path(book) %></h3>
-        <h3 class="body"><%= link_to book.body %></h3>
+        <% @books.each do |book| %>
+        <tbody>
+        <tr class="title"><%= link_to book.title, book_path(book) %></tr>
+        <tr class="body"><%= link_to book.body %></tr>
+        </tbody>
         
         <% end %>
         
-    </div>
+    </table>
     <h2>New book</h2>
     <%= form_with model:@book, local:true do |f| %>
     <%= f.text_field :title %>
