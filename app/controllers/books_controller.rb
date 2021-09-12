@@ -10,19 +10,17 @@ class BooksController < ApplicationController
 
   def new
     # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する
-    @book = Book.new
+    @books = Book.new
   end
   
   def create
-    @book = Book.new(book_params)
-    
-    if  @book.save
+    @books = Book.new(book_params)
+    if  @books.save
     flash[:create] = 'Book was successfully created.'
-    redirect_to book_path(@book.id)
-    
+    redirect_to book_path(@books.id)
+    else
+    render :index
     end
-    
-    
   end
 
   def edit
