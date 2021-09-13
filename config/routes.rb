@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'books#top'
   get 'books/new'
   get 'top' => 'home#top'
   post 'books' => 'books#create'

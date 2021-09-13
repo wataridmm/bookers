@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+def top
+        
+    end
   
   def index
     @books = Book.all
@@ -10,7 +13,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する
+    # Viewへ渡すためnoインスタンス変数に空のモデルオブジェクトを生成する?
     @books = Book.new
   end
   
